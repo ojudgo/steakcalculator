@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steak Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+<body>
+
+  <main>
+    <h1>Chef's Choice</h1>
+    <h2> Steak calculator</h2>
+    <h3>If it's well done it ain't no fun!</h3>
+    
+    <div class="container">
+      <div class='controls'>
+        
+<!-- Cut Dropdown -->
+        <span>
+          <label for='cut-dropdown'>Cut:</label>
+          <select id='cut-dropdown' name='cuts'>
+            <option value='sirloin' selected>Sirloin</value>
+          <option value='rump'>Rump</value>
+        <option value='fillet'>Fillet</value>
+          </select>
+<!-- DON'T NEED A BUTTON         <button id='add-cut'>Select cut</button>-->
+               </span> 
+          </div>
+      
+ <!-- Thick Dropdown -->
+      
+      <div class='controls'>
+        <span>
+          <label for='thick-dropdown'>Thickness:</label>
+          <select id='thick-dropdown' name='thicknesses'>
+            <option value='normal' selected>Normal (2cm)</option>
+            <option value='thin'>Thin (<2cm)</option>
+            <option value='thick'>Thick (>2cm)</option>
+            
+          </select>
+          <!-- <button id='add-thickness'>Select thickness</button> -->
+               </span>
+          </div>
+ 
+  <div>
+    <button type='submit' id='calculate'>Calculate griddle time</button>
+      </div>
+ 
+<!-- hidden output-->
+  <div id='output' class='output hide'>
+    
+    </div>
+
+
+      </div> <!-- end of container -->
+    
+      
+      
+  </main>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
