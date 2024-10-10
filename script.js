@@ -3,28 +3,31 @@ const thickDropdown = document.getElementById('thick-dropdown');
 const calculateBtn = document.getElementById('calculate');
 const output = document.getElementById('output');
 
-const sirloin = {
-  normal: '1 minute 30 seconds',
-  thin: '1 minute',
-  thick: 2
-}
-
-const rump = {
-  normal: '2 minutes 30 seconds',
-  thin: 2,
-  thick: '3 minutes'
-}
-
-const fillet = {
-  normal: 2,
-  thin: '1 minute 30 seconds',
-  thick: '2 minutes 30 seconds'
+const cuts = {
+  'sirloin': {'normal': '1 minute 30 seconds', 'thin': '1 minute', 'thick': '2 minutes'},
+  'rump': {'normal': '2 minutes 30 seconds', 'thin': '2 minutes', 'thick': '3 minutes'},
+  'fillet': {'normal': '2 minutes', 'thin': '1 minute 30 seconds', 'thick': '2 minutes 30 seconds'}
 };
 
-// console.log(sirloin.normal)
+const getTime = (cut, thick) => {return cuts[cut][thick]}
 
-// console.log(cutDropdown.value);
-// console.log(thickDropdown.value);
+calculateBtn.addEventListener('click', 
+    () => {
+        time = getTime(cutDropdown.value, thickDropdown.value);
+        output.textContent = `${time} per side`;
+        output.style.display = 'block';
+}
+                           );
+
+/* PREVIOUS/FAILED ATTEMPTS
+
+const getTime2 = (cut, thick) => {
+  const regex = /"/;
+  let cleanCut = cut.replace(regex, '');
+  let cleanThick = thick.replace(regex, '')
+  console.log(cleanCut + '.' + cleanThick)
+  return cleanCut.cleanThick
+}
 
 const getTime = () => {  
    if (cutDropdown.value === 'sirloin' && thickDropdown.value === 'normal') {return sirloin.normal}
@@ -36,12 +39,4 @@ const getTime = () => {
   else {return '2 minutes'}
 };
 
-// console.log(getTime())
-
-calculateBtn.addEventListener('click', 
-    () => {
-        time = getTime();
-        output.textContent = `${time} per side`;
-        output.style.display = 'block';
-}
-                           );
+*/
